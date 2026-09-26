@@ -17,7 +17,5 @@ class Task(models.Model):
 
     def __str__(self):
         return self.title
-on_delete=models.CASCADE: deleting a user deletes their tasks too. choices= is how a dropdown's valid values get enforced server-side, not just offered client-side.
 
-python manage.py makemigrations
-python manage.py migrate
+
