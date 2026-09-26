@@ -72,11 +72,15 @@ WSGI_APPLICATION = 'taskflow.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
-
+import os
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("POSTGRES_DB", "taskflow"),
+        "USER": os.environ.get("POSTGRES_USER", "taskflow"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "taskflow"),
+        "HOST": os.environ.get("POSTGRES_HOST", "db"),
+        "PORT": "5432",
     }
 }
 
