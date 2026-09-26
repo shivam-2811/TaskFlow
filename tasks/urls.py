@@ -17,5 +17,6 @@ urlpatterns = [
     path("accounts/login/", auth_views.LoginView.as_view(template_name="login.html"), name="login"),
     path("accounts/", include("django.contrib.auth.urls")),
     path("", include("tasks.urls")),
+    path("clear-completed/", views.clear_completed, name="clear_completed"),
 ]
 
